@@ -2,17 +2,6 @@ version: "3.3"
 
 services:
 
-  web:
-    image: nginx:1.17
-    ports:
-      - 8080:80
-    volumes:
-      - /var/www/docker-study.loc/recipe-03/php:/var/www/myapp
-      - /var/www/docker-study.loc/recipe-03/docker/site.conf:/etc/nginx/conf.d/site.conf
-    depends_on:
-      - php
-      - mariadb
-
   php:
     image: php:7.2-fpm
     volumes:
@@ -23,6 +12,8 @@ services:
 
   mariadb:
     image: mariadb:10.4
+    ports:
+      - 3306:3306
     restart: always
     volumes:
       - mariadb-data:/var/lib/mysql
