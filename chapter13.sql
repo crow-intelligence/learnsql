@@ -43,3 +43,4 @@ CONSTRAINT fk_product_type_cd FOREIGN KEY (product_type_cd)
 REFERENCES product_type (product_type_cd),
 CONSTRAINT pk_product PRIMARY KEY (product_cd)
 );
+
