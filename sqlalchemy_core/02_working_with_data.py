@@ -26,7 +26,7 @@ from sqlalchemy import (
 
 from sqlalchemy_core.db_config import db
 
-engine = create_engine(db, pool_recycle=3600, echo=False)
+engine = create_engine(db, pool_recycle=36000000, echo=False)
 
 connection = engine.connect()
 
@@ -444,4 +444,3 @@ print(result)
 
 stmt = select([users]).where(text("username='cookiemon'"))
 print(connection.execute(stmt).fetchall())
-
