@@ -270,6 +270,6 @@ def ship_it(order_id):
 
 
 u = update(cookies).where(cookies.c.cookie_name == "dark chocolate chip")
-u = u.values(quantity = 1)
+u = u.values(quantity=1)
 result = connection.execute(u)
 ship_it(1)
